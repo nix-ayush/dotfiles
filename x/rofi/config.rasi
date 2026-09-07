@@ -1,0 +1,9 @@
+configuration {
+drun-display-format: "{name}";
+font: "JetBrainsMono Nerd Font 18";
+location: 0;
+modes: [ "window","drun","run","ssh" ];
+show-icons: false;
+xoffset: 0;
+yoffset: 0;
+}

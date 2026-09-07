@@ -1,0 +1,18 @@
+*.swl
+*.tmp
+*.swp
+
+# Emacs Backup and Lock Files
+*~
+\#*\#
+.\#*
+.emacs.desktop
+.emacs.desktop.lock
+elpa/
+auto-save-list/
+tramp
+.uid
+
+# Sway and Wayland Caches
+.cache/
+EOF

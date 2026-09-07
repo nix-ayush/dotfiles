@@ -1,0 +1,208 @@
+# font
+font pango:JetBrainsMono Nerd Font 15.000000
+
+# Logo key as
+set $mod Mod4
+set $terminal kitty
+
+floating_modifier $mod
+
+# borders
+default_border normal 2
+default_floating_border normal 2
+hide_edge_borders none
+
+focus_wrapping yes
+mouse_warping output
+focus_follows_mouse yes
+focus_on_window_activation smart
+
+
+client.focused #4c7899 #285577 #ffffff #2e9ef4 #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50 #5f676a
+client.unfocused #333333 #222222 #888888 #292d2e #222222
+client.urgent #2f343a #900000 #ffffff #900000 #900000
+client.placeholder #000000 #0c0c0c #ffffff #000000 #0c0c0c
+client.background #ffffff
+
+# Workspace
+bindsym $mod+0 workspace number 10
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+
+bindsym $mod+Shift+0 move container to workspace number 10
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+
+# bindsym $mod+Down focus down
+# bindsym $mod+Left focus left
+# bindsym $mod+Right focus right
+# bindsym $mod+Shift+Down move down
+# bindsym $mod+Shift+Left move left
+# bindsym $mod+Shift+Right move right
+# bindsym $mod+Shift+Up move up
+
+workspace_auto_back_and_forth yes
+bindsym $mod+Tab workspace back_and_forth
+
+workspace_layout tabbed
+bindsym $mod+w layout tabbed
+bindsym $mod+s layout stacking
+bindsym $mod+e layout toggle split
+
+
+# Flameshot
+bindsym Print exec --no-startup-id flameshot gui
+bindsym $mod+Print exec --no-startup-id flameshot full
+bindsym $mod+Shift+Print exec --no-startup-id flameshot gui --clipboard
+
+
+# Rofi
+bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+Shift+Tab exec --no-startup-id rofi -show window -modi window
+bindsym $mod+y exec --no-startup-id $HOME/.config/scripts/rofi-battery.sh
+
+
+# exec
+bindsym $mod+Return exec $terminal
+bindsym $mod+l exec i3lock-color \
+      --blur 7 \
+      --ring-color="0088cc" \
+      --inside-color="1a1a2e88" \
+      --line-color="00000000" \
+      --separator-color="00000000" \
+      --verif-color="00ffffff" \
+      --wrong-color="ff5555" \
+      --keyhl-color="00eeff" \
+      --bshl-color="abb2bf" \
+      --ringver-color="00ffcc" \
+      --insidever-color="1a1a2e88" \
+      --ringwrong-color="ff5555" \
+      --insidewrong-color="1a1a2e88" \
+      --clock --force-clock \
+      --time-color="00eeff" \
+      --date-color="0088cc" \
+      --indicator \
+      --radius 120 \
+      --ring-width 10
+
+# exec --no-startup-id
+exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id xset s off s 600
+exec --no-startup-id $terminal
+exec --no-startup-id $terminal --title 'btop_monitor' -e btop
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-color \
+      --blur 7 \
+      --ring-color="0088cc" \
+      --inside-color="1a1a2e88" \
+      --line-color="00000000" \
+      --separator-color="00000000" \
+      --verif-color="00ffffff" \
+      --wrong-color="ff5555" \
+      --keyhl-color="00eeff" \
+      --bshl-color="abb2bf" \
+      --ringver-color="00ffcc" \
+      --insidever-color="1a1a2e88" \
+      --ringwrong-color="ff5555" \
+      --insidewrong-color="1a1a2e88" \
+      --clock --force-clock \
+      --time-color="00eeff" \
+      --date-color="0088cc" \
+      --indicator \
+      --radius 120 \
+      --ring-width 10
+
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+Shift+q kill
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+Up focus up
+bindsym $mod+a focus parent
+
+bindsym $mod+Shift+s fullscreen toggle
+bindsym $mod+h split h
+
+bindsym $mod+minus scratchpad show
+bindsym $mod+q kill
+
+bindsym $mod+space focus mode_toggle
+bindsym $mod+v split v
+bindsym $mod+z focus child
+
+
+# Volume with wpctl
+exec --no-startup-id sh -c 'wpctl set-volume @DEFAULT_SINK@ 0.3'
+exec --no-startup-id sh -c 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.3'
+bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+
+
+# Brightness with brightnessctl
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
+
+
+# resize
+bindsym $mod+r mode resize
+mode "resize" {
+  bindsym $mod+r mode default
+  bindsym Escape mode default
+  bindsym Return mode default
+
+  bindsym Left resize shrink width 10 px or 10 ppt
+  bindsym Right resize grow width 10 px or 10 ppt
+  bindsym Up resize shrink height 10 px or 10 ppt
+  bindsym Down resize grow height 10 px or 10 ppt
+}
+
+
+assign [title="btop_monitor"] 10
+assign [class="firefox"] 2
+for_window [class="mpv"] focus, enable
+for_window [class="firefox" instance="Places"] focus, floating enable
+for_window [instance="main"] focus, floating enable
+for_window [title="btop_monitor"] fullscreen enable
+for_window [floating] resize set width 60 ppt height 60 ppt, move absolute position center
+
+floating_modifier $mod
+
+# Right click to eliminate the exitence of window on clicking the title of thw window
+bindsym button3 kill
+
+focus_follows_mouse no
+title_align center
+
+default_border pixel 0
+default_floating_border pixel 0
+hide_edge_borders smart
+
+gaps inner 0
+gaps outer 0
+smart_gaps true
+
+# -- emacs-like --
+bindsym $mod+p focus up
+bindsym $mod+n focus down
+bindsym $mod+b focus left
+bindsym $mod+f focus right
+bindsym $mod+Shift+p move up
+bindsym $mod+Shift+n move down
+bindsym $mod+Shift+b move left
+bindsym $mod+Shift+f move right

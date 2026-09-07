@@ -1,0 +1,33 @@
+{
+    "extractor": {
+        "parent-directory": true,
+        "keywords-default": "null",
+        "base-directory": "~/media/gallery-dl/",
+        "archive": "~/.config/gallery-dl/archive.db",
+        "generic": {
+            "enabled": false
+        }
+    },
+    "downloader": {
+        "part-directory": null,
+        "ytdl": {
+            "enabled": true,
+            "module": "yt-dlp"
+        },
+        "http": {
+            "name": "aria2c",
+            "args": [
+                "--continue=true",
+                "--min-split-size=1M",
+                "--max-connection-per-server=4",
+                "--file-allocation=falloc",
+                "--user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+            ]
+        }
+    },
+    "network": {
+        "retries": 3,
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+        "user-agent_fox": "Mozilla/5.0 (X11; Linux x86_64; rv:146.0) Gecko/20100101 Firefox/146.0"
+    }
+}

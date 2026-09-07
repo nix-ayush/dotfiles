@@ -1,0 +1,6 @@
+--remote-components ejs:github
+--cookies-from-browser firefox
+--embed-metadata
+--embed-thumbnail
+-o "%(uploader)s - %(title)s [%(resolution)s] [%(upload_date)s] [%(duration_string)s] [%(id)s].%(ext)s"
+-t mkv

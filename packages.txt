@@ -1,0 +1,134 @@
+# -- display-x --
+dunst
+# flameshot
+# i3lock-color
+# libnotify
+# picom
+# rofi
+# xclip
+# xss-lock
+
+# -- display-wayland-sway --
+swappy
+swaybg
+swayidle
+# swaylock-effects
+SwayNotificationCenter
+
+fuzzel
+grim
+mako
+slurp
+waybar
+wl-clipboard
+
+
+# -- Sound:Display:Network:Battery --
+pavucontrol
+brightnessctl
+network-manager-applet
+wireguard-tools
+acpi
+
+
+# -- Hp:Intel:Graphic --
+intel-media-driver
+libva-utils
+mesa-demos
+
+
+# -- Input Method & Devanagari/Hindi Tools --
+fcitx5
+fcitx5-m17n
+fcitx5-gtk
+fcitx5-qt
+fcitx5-configtool
+m17n-db
+
+# Fonts
+lohit-devanagari-fonts
+google-noto-sans-devanagari-fonts
+jetbrains-mono-fonts
+google-noto-sans-fonts
+open-sans-fonts
+google-roboto-fonts
+fira-code-fonts
+fontawesome-fonts-all
+
+
+# -- Disk --
+gsmartcontrol
+smartmontools
+
+
+# - Cli -
+bat
+btop
+coreutils
+dos2unix
+gnupg2
+fd-find
+fdupes
+fzf
+jq
+kitty
+keychain
+libjxl
+ripgrep
+tldr
+trash-cli
+tree
+
+# media
+feh
+ffmpeg
+libjxl
+mpd
+mpv
+nomacs
+libjxl-utils
+
+# docs
+evince
+foliate
+mupdf
+
+# down
+aria2
+curl
+syncthing
+yt-dlp
+
+# xdg
+xdg-utils
+xdg-desktop-portal
+xdg-desktop-portal-wlr
+xdg-desktop-portal-gtk
+
+lxappearance
+
+# spell
+aspell
+aspell-en
+aspell-hi
+hunspell
+shellcheck
+
+# -- Development --
+git
+stow
+neovim
+emacs
+
+toolbox
+
+# :c-development
+gcc-c++
+clang
+cmake
+lldb
+
+# :python-classroom
+python3
+python3-pip
+python3-tkinter

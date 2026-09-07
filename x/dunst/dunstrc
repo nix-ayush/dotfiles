@@ -1,0 +1,17 @@
+[global]
+    font = JetBrainsMono Nerd Font 13
+
+    # Frame / Border
+    frame_color = "#89B4FA"
+    separator_color = frame
+    corner_radius = 5
+    
+    # Placement
+    offset = 20x20
+    origin = top-right
+
+    # Recommended defaults you usually want with Niri/Wayland
+    width = 300
+    height = 300
+    notification_limit = 5
+    transparency = 10

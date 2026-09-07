@@ -1,0 +1,10 @@
+[user]
+    email = 266145228+nix-ayush@users.noreply.github.com
+    name = Ayush Kumar
+    signingkey = ~/.ssh/signing.pub
+[gpg]
+    format = ssh
+[commit]
+    gpgsign = true
+[init]
+    defaultBranch = main

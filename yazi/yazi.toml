@@ -1,0 +1,110 @@
+[mgr]
+linemode = "mtime"
+ratio = [0, 3, 5]
+show_hidden = true
+show_symlink = true
+sort_by = "mtime"
+sort_dir_first = true
+sort_reverse = true
+title_format = "{cwd}"
+
+[[open.prepend_rules]]
+url = "*.epub"
+use = ["mupdf_open", "foliate_open"]
+
+[[open.rules]]
+mime = "application/{x-tar,tar,bzip2,7z,x-7z-compressed,zip,x-gzip,gzip}"
+use = "extract_open"
+
+[[open.rules]]
+mime = "application/{pdf,postscript,x-dvi,x-cbr,x-cbz,x-cb7,x-cbt,djvu}"
+use = ["mupdf_open", "evince_open"]
+
+[[open.rules]]
+mime = "text/*"
+use = ["emacs_open"]
+
+[[open.rules]]
+mime = "video/*"
+use = "mpv_open"
+
+[[open.rules]]
+mime = "audio/*"
+use = "mpv_open"
+
+[[open.rules]]
+mime = "image/djvu"
+use = ["evince_open"]
+
+[[open.rules]]
+mime = "image/*"
+use = ["feh_open", "nomacs_open", "mpv_open"]
+
+[[open.rules]]
+mime = "inode/directory"
+use = ["emacs_open", "compress_open"]
+
+[[open.rules]]
+url = "**/*"
+use = ["emacs_open", "firefox_open", "extract_open", "mpv_open"]
+
+[[opener.compress_open]]
+desc = "Compress to .tar.gz"
+orphan = true
+run = "ouch c \"$@\" archive.tar.gz"
+
+[[opener.emacs_open]]
+desc = "Open with emacs"
+orphan = true
+run = "emacsclient -c \"$@\""
+
+[[opener.mupdf_open]]
+desc = "Open in mupdf"
+orphan = true
+run = "mupdf \"$@\""
+
+[[opener.evince_open]]
+desc = "Open in evince"
+orphan = true
+run = "evince \"$@\""
+
+[[opener.foliate_open]]
+desc = "Open in foliate"
+orphan = true
+run = "foliate \"$@\""
+
+[[opener.extract_open]]
+desc = "Extract here with ouch"
+orphan = true
+run = "ouch d \"$@\""
+
+[[opener.feh_open]]
+desc = "Open in feh"
+orphan = true
+run = "feh \"$@\""
+
+[[opener.mpv_open]]
+desc = "Open in mpv"
+orphan = true
+run = "mpv \"$@\""
+
+[[opener.nomacs_open]]
+desc = "Open in nomacs"
+orphan = true
+run = "nomacs \"$@\""
+
+[[opener.firefox_open]]
+desc = "Open in firefox"
+orphan = true
+run = "firefox \"$@\""
+
+[preview]
+image_filter = "triangle"
+image_quality = 70
+preload = true
+tab_size = 2
+wrap = "yes"
+cache_dir = "~/.cache/yazi/"
+
+max_width = 1920
+max_height = 1080
